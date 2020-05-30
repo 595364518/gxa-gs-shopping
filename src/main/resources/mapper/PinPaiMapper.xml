@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace代表此mapper.xml和哪一个mapper接口关联 -->
+<mapper namespace="com.gxaedu.shopping.mapper.PinPaiMapper">
+    <insert id="addBrand" parameterType="com.gxaedu.shopping.pojo.PinPai">
+        insert into pin_pai(id,pinpaimingcheng,pinpaishouzimu) values (#{id},#{pinpaimingcheng},#{pinpaishouzimu})
+    </insert>
+    <update id="updateBrand" parameterType="com.gxaedu.shopping.pojo.PinPai">
+        update pin_pai
+        <set>
+            <if test="pinpaimingcheng!=null&amp;&amp;pinpaimingcheng!=''">
+                pinpaimingcheng = #{pinpaimingcheng},
+            </if>
+            <if test="pinpaishouzimu!=null&amp;&amp;pinpaishouzimu!=''">
+                pinpaishouzimu = #{pinpaishouzimu}
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+    <delete id="deleteById">
+        delete from pin_pai where id = #{id}
+    </delete>
+    <select id="getAllBrand" resultType="com.gxaedu.shopping.pojo.PinPai">
+        select * from `pin_pai`
+    </select>
+    <select id="queryAllByLimit" resultType="com.gxaedu.shopping.pojo.PinPai">
+
+    </select>
+    <select id="queryById" resultType="com.gxaedu.shopping.pojo.PinPai">
+        select * from pin_pai where id = #{id}
+    </select>
+</mapper>

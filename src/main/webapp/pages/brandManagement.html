@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <title>国信安商品管理系统</title>
+    <link rel="stylesheet" href="../layui/css/layui.css">
+    <link rel="stylesheet" href="../stylesheet/base.css">
+    <script src="../utils/jquery-3.4.1.min.js"></script>
+</head>
+<body class="layui-layout-body">
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo"><img src="../images/logo.png" alt=""></div>
+        <!-- 头部区域（可配合layui已有的水平导航） -->
+        <ul class="layui-nav layui-layout-left">
+            <li class="layui-nav-item"><a href="">控制台</a></li>
+            <li class="layui-nav-item"><a href="">商品管理</a></li>
+            <li class="layui-nav-item"><a href="">用户</a></li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">其它系统</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">邮件管理</a></dd>
+                    <dd><a href="">消息管理</a></dd>
+                    <dd><a href="">授权管理</a></dd>
+                </dl>
+            </li>
+<!--            <h1>国信安商品管理系统 </h1>-->
+        </ul>
+        <ul class="layui-nav layui-layout-right">
+            <li class="layui-nav-item">
+                <a href="javascript:;">
+                    <img src="http://t.cn/RCzsdCq" class="layui-nav-img">
+                    贤心
+                </a>
+                <dl class="layui-nav-child">
+                    <dd><a href="">基本资料</a></dd>
+                    <dd><a href="">安全设置</a></dd>
+                </dl>
+            </li>
+            <li class="layui-nav-item"><a href="">注销</a></li>
+        </ul>
+    </div>
+
+    <div class="layui-side layui-bg-black">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree"  lay-filter="test">
+                <li class="layui-nav-item"><a href="home.html">首页</a></li>
+                <li class="layui-nav-item">
+                    <a class="" href="javascript:;">商品</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="commoditiesList.html">商品列表</a></dd>
+                        <dd><a href="commoditiesAdd.html">添加商品</a></dd>
+                        <dd><a href="classification1.html">一级分类</a></dd>
+                        <dd><a href="classification2.html">二级分类</a></dd>
+                        <dd><a href="brandManagement.html">品牌管理</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">订单</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="javascript:;">订单列表</a></dd>
+                        <dd><a href="javascript:;">订单设置</a></dd>
+                        <dd><a href="javascript:;">退货申请处理</a></dd>
+                        <dd><a href="javascript:;">退货原因设置</a></dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item">
+                    <a href="javascript:;">权限</a>
+                    <dl class="layui-nav-child">
+                        <dd><a href="user.html">用户管理</a></dd>
+                        <dd><a href="position.html">职位管理</a></dd>
+                        <dd><a href="department.html">部门管理</a></dd>
+                    </dl>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+
+    <div class="layui-body">
+        <!-- 内容主体区域 -->
+        <header>
+            <span class="layui-breadcrumb" style="margin: 15px;line-height: 60px;">
+                <a href="home.html">首页</a>
+                <a href="#">商品</a>
+                <a ><cite>品牌管理</cite></a>
+            </span>
+        </header>
+        <div id="box">
+            <div class="search-box">
+                <div class="search-box-1">
+                    <div class="h8">筛选条件</div>
+                    <div>
+                        <button class="layui-btn layui-btn-primary">重置</button>
+                        <button class="layui-btn layui-btn-normal">查询搜索</button>
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <label for="inp-name" class="layui-form-label"> <b>品牌名称：</b></label>
+                    <div class="layui-input-block" style="width: 200px;">
+                        <input class="layui-input" id="inp-name" placeholder="请输入品牌" type="text">
+                    </div>
+                </div>
+            </div>
+            <div class="list-header">
+                <p class="h8">数据列表</p>
+                <p id="brandA"><button class="layui-btn layui-btn-primary " data-method="brandAdd" data-type="auto">添加</button></p>
+            </div>
+            <div class="list">
+                <table class="layui-table" id="brand" lay-data="{id:'brand'}" lay-filter="brand"></table>
+            </div>
+            <div class="paging">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a class="prev" href="#">
+                                <span>&laquo;</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="next" href="#">
+                                <span>&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+        <!--品牌添加-->
+        <div class="layui-form-item" id="add" hidden>
+            <label class="layui-form-label">品牌名称：</label>
+            <div class="layui-input-block" style="padding: 10px;width: 250px;">
+                <input id="brandName" class="layui-input" type="text">
+            </div>
+            <label class="layui-form-label">品牌首字母：</label>
+            <div class="layui-input-block" style="padding: 10px; width:250px;">
+                <input id="brandInitials" class="layui-input" type="text">
+            </div>
+        </div>
+
+        <!--品牌删除-->
+        <div class="layui-form-item" id="delete" hidden>
+            <div class="modal-body">
+                您确定要删除【<span id="brandName3">xxx</span>】品牌吗？
+            </div>
+        </div>
+    </div>
+
+    <div class="layui-footer">
+        <!-- 底部固定区域 -->
+        © layui.com - 底部固定区域
+    </div>
+</div>
+<script src="../layui/layui.js"></script>
+<script type="text/html" id="barDemo">
+<!--    <a class="layui-btn layui-btn-xs" lay-event="edit">编辑</a>-->
+    <a class="layui-btn layui-btn-danger layui-btn-xs" lay-event="del">删除</a>
+</script>
+<!--<script src="../js/brandManagement.js"></script>-->
+<script>
+    layui.use(['layer','element','table'], function(){
+        let $ = layui.jquery,layer=layui.layer; //独立版的layer无需执行这一句
+        let table = layui.table;
+        let element = layui.element;
+        table.render({
+            elem: '#brand'
+            ,url:'/pinPai/getAllBrand'
+            ,cols: [[
+                {field:'id', title:'ID', fixed: 'left', unresize: true, sort: false}
+                ,{field:'pinpaimingcheng', edit:'text', title:'商标名'}
+                ,{field:'pinpaishouzimu', edit:'text', title:'商标首字母'}
+                    /*
+                    * {field:'email', title:'邮箱', width:150, templet: function(res){
+                        return '<em>'+ res.email +'</em>'
+                    }}
+                    * */
+                ,{fixed: 'right', title:'操作', toolbar: '#barDemo'}
+            ]]
+            ,page: true
+        });
+        table.on('edit(brand)', function(obj){
+            var value = obj.value //得到修改后的值
+                ,sdata = obj.data //得到所在行所有键值
+                ,sfield1 = obj.field //得到字段
+            let param={
+            [sfield1]:value,
+                id:sdata.id
+            };
+            $.ajax({
+                url:"/pinPai/updateBrand",
+                data:param,
+                success:function (res) {
+                    alert(res.code);
+                    location.href="brandManagement.html";
+                },
+                error:function () {
+                    alert("网络连接失败");
+                }
+
+            });
+            // layer.msg('[ID: '+ data.id +'] ' + sfield + ' 字段更改为：'+ value);
+        });
+
+        //监听行工具事件
+        table.on('tool(brand)', function(obj){
+            var data = obj.data;
+            //console.log(obj)
+            if(obj.event === 'del'){
+                layer.confirm('真的删除行么', function(index){
+                    let id = data.id;
+                    $.ajax({
+                        url:"/pinPai/deleteBrand",
+                        data:{
+                            'id':id
+                        },
+                        success:function (res) {
+                            alert(res.code);
+                            location.href="brandManagement.html";
+                        },
+                        error:function () {
+                            alert("网络连接失败");
+                        }
+                    })
+                });
+            }
+                // else if(obj.event === 'edit'){
+            //     layer.prompt({
+            //         formType: 2
+            //         ,value: data.pinpaimingcheng
+            //         ,idField:data.id.field
+            //         ,
+            //     }, function(value, index){
+            //         $.ajax({
+            //             url:"/pinPai/updateBrand",
+            //             data:{
+            //
+            //             },
+            //             success:function (res) {
+            //                 alert(res.code);
+            //                 location.href="brandManagement.html";
+            //             },
+            //             error:function () {
+            //                 alert("网络连接失败");
+            //             }
+            //         })
+            //     });
+            // }
+        });
+        let active={
+            brandAdd: function(){
+                //商标添加
+                layer.open({
+                    type: 1
+                    ,title: '品牌添加' //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '450px;'
+                    ,shade: 0
+                    ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                    ,btn: ['添加', '取消']
+                    ,btnAlign: 'r'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: $('#add')
+                    ,success: function(layero){
+                        var btn = layero.find('.layui-layer-btn');
+                        btn.find('.layui-layer-btn0').click(function () {
+                            // alert("品牌名称："+$('#brandName').val());
+                            let pinpaimingcheng = $('#brandName').val();
+                            let pinpaishouzimu = $('#brandInitials').val();
+                            // alert(pinpaimingcheng+":::"+pinpaishouzimu);
+                            $.ajax(
+                                {
+                                    url:'/pinPai/addBrand',
+                                    data:{
+                                        pinpaimingcheng,
+                                        pinpaishouzimu
+                                    },
+                                    success:function (res) {
+                                        if(res.data!=null){
+                                            alert(res.data.pinpaimingcheng+" ：添加成功");
+                                            location.href="brandManagement.html";
+                                        }else{
+                                            alert("添加失败");
+                                        }
+                                    },
+                                    error:function (res) {
+                                        alert("连接出错啦~");
+                                    }
+                                }
+
+                            )
+                        })
+                    }
+                });
+            },
+            brandDelete: function(obj){
+                //商标添加
+                layer.open({
+                    type: 1
+                    ,title: '品牌添加' //不显示标题栏
+                    ,closeBtn: false
+                    ,area: '450px;'
+                    ,shade: 0
+                    ,id: 'LAY_layuipro' //设定一个id，防止重复弹出
+                    ,btn: ['删除', '取消']
+                    ,btnAlign: 'r'
+                    ,moveType: 1 //拖拽模式，0或者1
+                    ,content: $('#delete')
+                    ,success: function(layero){
+                        var btn = layero.find('.layui-layer-btn');
+                        // alert("品牌名称："+$('#brandName').val());
+                        alert(obj.data);
+                        btn.find('.layui-layer-btn0').click(function () {
+                            if(confirm("是否删除")){
+                                $.ajax(
+                                    {
+                                        url:'/api/delete',
+                                        data:{
+                                            userName:'123',
+                                            password:'123'
+                                        },
+                                        success:function (res) {
+                                            alert("删除成功");
+                                        },
+                                        error:function (res) {
+                                            alert("网络连接失败");
+                                        }
+                                    }
+
+                                )
+                            }
+                        })
+                    }
+                });
+            }
+        };
+        $('#brandA .layui-btn').on('click', function(){
+            let othis = $(this), method = othis.data('method');
+            active[method] ? active[method].call(this, othis) : '';
+        });
+        $('#brandD .layui-btn').on('click', function(obj){
+            let othis = $(this);
+            let oId = othis.parent().parent().siblings('.brandName').text();
+            // alert(oId);
+            let method = othis.data('method');
+            active[method] ? active[method].call([this, othis]) : '';
+        });
+    });
+</script>
+</body>
+</html>

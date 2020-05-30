@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../utils/jquery-3.4.1.min.js"></script>
+    <script src="../utils/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../utils/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheet/base.css">
+    <link rel="stylesheet" href="../stylesheet/commoditiesAdd.css">
+    <link rel="stylesheet" href="../utils/imageUpdata/css/index.css">
+</head>
+<body>
+<div id="header">
+    <h1><img src="../images/logo.png" alt=""><span>国信安商品管理系统 </span>
+        <a class="close glyphicon glyphicon-off" aria-hidden="true"></a>
+    </h1>
+
+</div>
+<div id="app">
+    <div id="nav">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="nav-header" href="home_a.html">
+                            首页
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="nav-header"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            商品
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="commoditiesList_a.html">商品列表</a></li>
+                            <li><a href="commoditiesAdd_a.html">添加商品</a></li>
+                            <li><a href="classification1_a.html">一级分类</a></li>
+                            <li><a href="classification2_a.html">二级分类</a></li>
+                            <li><a href="brandManagement.html">品牌管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            订单
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="javascript:;">订单列表</a></li>
+                            <li><a href="javascript:;">订单设置</a></li>
+                            <li><a href="javascript:;">退货申请处理</a></li>
+                            <li><a href="javascript:;">退货原因设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            权限
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="user_a.html">用户管理</a></li>
+                            <li><a href="position_a.html">职位管理</a></li>
+                            <li><a href="department_a.html">部门管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="context" class="container-fluid">
+        <header>
+            <ol class="breadcrumb">
+                <li><a href="home_a.html">首页</a></li>
+                <li><a href="#">商品</a></li>
+                <li class="active">添加商品</li>
+            </ol>
+        </header>
+        <div id="box">
+            <div class="panel-group" id="accordion2">
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingOne2">
+                        <h4 class="panel-title">
+                            <a role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne2" aria-expanded="true" aria-controls="collapseOne2">
+                                <h2>单个商品添加</h2>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne2" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                        <div class="panel-body">
+                            <div id="single" class="form-inline">
+                                <div>
+                                    商品名称：
+                                    <input id="brandName" style="width: 100px" type="text" class="form-control">
+                                    商品品牌：
+                                    <select id="brand" style="width: 100px" class="form-control">
+
+                                    </select>
+                                    一级分类：
+                                    <select id="typeOneName" style="width: 100px" class="form-control">
+
+                                    </select>
+                                    二级分类：
+                                    <select id="typeTwoName" style="width: 100px" class="form-control">
+
+                                    </select>
+                                    商品价格：
+                                    <input id="price" style="width: 100px" type="text" class="form-control">
+                                </div>
+                                <div>
+                                    文字描述:
+                                    <textarea id="msg" rows="4" cols="140" class="form-control"></textarea>
+                                </div>
+                                <div>
+                                    商品图片：
+                                    <div class="img-box full">
+                                        <section class=" img-section">
+                                            <div class="z_photo upimg-div clear" >
+                                                <section class="z_file fl">
+                                                    <img src="../utils/imageUpdata/img/a11.png" class="add-img">
+                                                    <input type="file" name="file" id="file" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <aside class="mask works-mask">
+                                        <div class="mask-content">
+                                            <p class="del-p">您确定要删除作品图片吗？</p>
+                                            <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div>
+                                    说明图片：
+                                    <div class="img-box full">
+                                        <section class=" img-section">
+                                            <div class="z_photo upimg-div clear" >
+                                                <section class="z_file fl">
+                                                    <img src="../utils/imageUpdata/img/a11.png" class="add-img">
+                                                    <input type="file" name="file" id="file1" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                                </section>
+                                            </div>
+                                        </section>
+                                    </div>
+                                    <aside class="mask works-mask">
+                                        <div class="mask-content">
+                                            <p class="del-p">您确定要删除作品图片吗？</p>
+                                            <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+                                        </div>
+                                    </aside>
+                                </div>
+                                <div style="text-align: center; margin-bottom: 0">
+                                    <button class="btn btn-info" id="singleUpdataBtn">上传</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo2">
+                        <h4 class="panel-title">
+                            <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                <h2>批量商品添加</h2>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo2" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                        <div class="panel-body">
+                            <div id="batch">
+                                <input type="file" name="" id="" >
+                                <button class="btn btn-info" id="batchUpdataBtn">上传</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>
+<script src="../utils/imageUpdata/js/imgPlugin.js"></script>
+<script src="../utils/imageUpdata/js/imgUp.js"></script>
+<script>
+    var myData=[];
+    $('#singleUpdataBtn').click(function () {
+
+        var fd = new FormData();
+        fd.append("shangpinmingcheng", $('#brandName').val());
+        fd.append("pinpaiId", $('#brand').val());
+        fd.append("erjifenleiId", $('#typeOneName').val());
+        fd.append("yijifenleiId", $('#typeTwoName').val());
+        fd.append("shangpinjiage", $('#price').val());
+        fd.append("wenzimiaoshu", $('#msg').val());
+        fd.append("file",  myData[0]);
+        $.ajax({
+            url: '/shangpin/xinZeng/',
+            type: 'post',
+            processData: false,
+            contentType: false,
+            data: fd,
+            success: function (res) {
+                console.log(res)
+            }
+        })
+    });
+
+
+    $.ajax({
+        url: '/api/erjifenlei/chaXunFenYe',
+        data: {
+            yeMa:page,
+            erJiFenLeiMingCheng:$('#inp-name').val()
+        },
+        success:function (res) {
+            console.log(res)
+            if(res.code==200){
+
+                createPageList(res.zongYeMa);
+                createDataList(res.erJiFenLeiList);
+                pageShow();
+            }
+        }
+    });
+
+</script>

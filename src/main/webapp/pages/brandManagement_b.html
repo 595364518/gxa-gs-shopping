@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../utils/jquery-3.4.1.min.js"></script>
+    <script src="../utils/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../utils/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheet/base.css">
+</head>
+<body>
+<div id="header">
+    <h1><img src="../images/logo.png" alt=""><span>国信安商品管理系统 </span>
+        <a class="close glyphicon glyphicon-off" aria-hidden="true"></a>
+    </h1>
+
+</div>
+<div id="app">
+    <div id="nav">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="nav-header" href="home_a.html">
+                            首页
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="nav-header"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            商品
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="commoditiesList_a.html">商品列表</a></li>
+                            <li><a href="commoditiesAdd_a.html">添加商品</a></li>
+                            <li><a href="classification1_a.html">一级分类</a></li>
+                            <li><a href="classification2_a.html">二级分类</a></li>
+                            <li><a href="brandManagement.html">品牌管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            订单
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="javascript:;">订单列表</a></li>
+                            <li><a href="javascript:;">订单设置</a></li>
+                            <li><a href="javascript:;">退货申请处理</a></li>
+                            <li><a href="javascript:;">退货原因设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            权限
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="user_a.html">用户管理</a></li>
+                            <li><a href="position_a.html">职位管理</a></li>
+                            <li><a href="department_a.html">部门管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="context" class="container-fluid">
+        <header>
+            <ol class="breadcrumb">
+                <li><a href="home_a.html">首页</a></li>
+                <li><a href="#">商品</a></li>
+                <li class="active">品牌管理</li>
+            </ol>
+        </header>
+        <div id="box">
+            <div class="search-box">
+                <div class="search-box-1">
+                    <div class="h8">筛选条件</div>
+                    <div>
+                        <button class="btn btn-default resizeBtn">重置</button>
+                        <button class="btn btn-info search-btn">查询搜索</button>
+                    </div>
+                </div>
+                <div class="search-box-2">
+                    <p class="form-inline">
+                        <label for="inp-name"> 品牌名称：</label>
+                        <input class="form-control" id="inp-name" type="text"></p>
+
+                </div>
+            </div>
+            <div class="list-header">
+                <p class="h8">数据列表</p>
+                <p><button class="btn btn-default " data-toggle="modal" data-target="#myModal">添加</button></p>
+            </div>
+            <div class="list">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>品牌名称</th>
+                            <th>品牌首字母</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr data-id="11">
+                            <td class="">1</td>
+                            <td class="brandName">test1111111</td>
+                            <td class="brandInitials">m</td>
+                            <td>
+                                <button class="btn btn-link" data-target="#myModal1" data-toggle="modal">编辑</button>
+                                <button class="btn btn-link" data-target="#myModal2" data-toggle="modal">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a class="prev" href="#">
+                                <span>&laquo;</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="next" href="#">
+                                <span>&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+    <!--品牌添加-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">品牌添加</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <p>
+                            <label>品牌名称：</label>
+                            <input id="brandName" class="form-control" type="text">
+                        </p>
+                        <p>
+                            <label>品牌首字母：</label>
+                            <input id="brandInitials" class="form-control" type="text">
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary addBtn">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--品牌编辑-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel1">品牌编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <p>
+                            <label>品牌名称：</label>
+                            <input id="brandName2" class="form-control" type="text">
+                        </p>
+                        <p>
+                            <label>品牌首字母：</label>
+                            <input id="brandInitials2" class="form-control" type="text">
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary editBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--品牌删除-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">品牌删除</h4>
+                </div>
+                <div class="modal-body">
+                    您确定要删除【<span id="brandName3">xxx</span>】品牌吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary delBtn">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../js/brandManagement.js"></script>

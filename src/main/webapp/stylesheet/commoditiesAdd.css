@@ -1,0 +1,30 @@
+#box{
+     margin: 10px 20px;
+     border: 1px solid #eee;
+     padding: 10px;
+}
+h2{
+    font-size: 20px;
+    font-weight: bold;
+    background-color: #304156;
+    line-height: 40px;
+    padding-left: 30px;
+    color: #fff;
+    margin-top: 0;
+}
+#box .panel-heading{
+    padding: 0;
+    height:40px ;
+}
+#single>div{
+    margin-bottom: 10px;
+}
+#single select{
+    width: 150px;
+}
+#singleUpdataBtn{
+    width: 200px;
+}
+#batchUpdataBtn{
+    margin-top: 20px;
+}

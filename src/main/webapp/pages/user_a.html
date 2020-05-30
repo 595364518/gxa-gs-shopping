@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../utils/jquery-3.4.1.min.js"></script>
+    <script src="../utils/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../utils/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheet/base.css">
+</head>
+<body>
+    <div id="header">
+        <h1><img src="../images/logo.png" alt=""><span>国信安商品管理系统 </span>
+            <a class="close glyphicon glyphicon-off" aria-hidden="true"></a>
+        </h1>
+
+    </div>
+    <div id="app">
+        <div id="nav">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a class="nav-header" href="home_a.html">
+                                首页
+                            </a>
+                        </h4>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" id="headingOne">
+                        <h4 class="panel-title">
+                            <a class="nav-header"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                商品
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="commoditiesList_a.html">商品列表</a></li>
+                                <li><a href="commoditiesAdd_a.html">添加商品</a></li>
+                                <li><a href="classification1_a.html">一级分类</a></li>
+                                <li><a href="classification2_a.html">二级分类</a></li>
+                                <li><a href="brandManagement.html">品牌管理</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingTwo">
+                        <h4 class="panel-title">
+                            <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                订单
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="javascript:;">订单列表</a></li>
+                                <li><a href="javascript:;">订单设置</a></li>
+                                <li><a href="javascript:;">退货申请处理</a></li>
+                                <li><a href="javascript:;">退货原因设置</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading" role="tab" id="headingThree">
+                        <h4 class="panel-title">
+                            <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                权限
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in" role="tabpanel">
+                        <div class="panel-body">
+                            <ul>
+                                <li><a href="user_a.html">用户管理</a></li>
+                                <li><a href="position_a.html">职位管理</a></li>
+                                <li><a href="department_a.html">部门管理</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="context" class="container-fluid">
+            <header>
+                <ol class="breadcrumb">
+                    <li><a href="home_a.html">首页</a></li>
+                    <li><a href="#">权限</a></li>
+                    <li class="active">用户</li>
+                </ol>
+            </header>
+            <div id="box">
+                <div class="search-box">
+                    <div class="search-box-1">
+                        <div class="h8">筛选条件</div>
+                        <div>
+                            <button class="btn btn-default resizeBtn">重置</button>
+                            <button class="btn btn-info searchBtn">查询搜索</button>
+                        </div>
+                    </div>
+                    <div class="search-box-2" style="margin-top: 20px">
+                        <p class="form-inline">
+                            <label for="inp-user">账号：</label>
+                            <input style="width: 100px" class="form-control" type="text" id="inp-user"></p>
+                        <p class="form-inline">
+                            <label for="inp-name"> 姓名：</label>
+                            <input style="width: 100px" class="form-control" id="inp-name" type="text"></p>
+                        <p class="form-inline">
+                            <label for="inp-dep">所属部门：</label>
+                            <input style="width: 100px" class="form-control" id="inp-dep" type="text"></p>
+                        <p class="form-inline">
+                            <label for="inp-pos">所属职位：</label>
+                            <input style="width: 100px" class="form-control" id="inp-pos" type="text"></p>
+                        <p class="form-inline">
+                            <label for="inp-time">创建时间：</label>
+                            <input style="width: 100px" class="form-control" id="inp-time" type="text"></p>
+                    </div>
+                </div>
+                <div class="list-header">
+                    <p class="h8">数据列表</p>
+                    <p><button class="btn btn-default " data-toggle="modal" data-target="#myModal">添加</button></p>
+                </div>
+                <div class="list ">
+                    <table class="table table-bordered table-hover">
+                        <thead>
+                            <tr>
+                                <th>序号</th>
+                                <th>账号</th>
+                                <th>姓名</th>
+                                <th>性别</th>
+                                <th>年龄</th>
+                                <th>联系方式</th>
+                                <th>创建时间</th>
+                                <th>所属部门</th>
+                                <th>所属职位</th>
+                                <th>是否启用</th>
+                                <th>操作</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!--<tr data-id="1">
+                                <td class="">1</td>
+                                <td class="userUser">test1111111</td>
+                                <td class="userName">测试账号</td>
+                                <td class="userSexList">女</td>
+                                <td class="userAge">12</td>
+                                <td class="userTel">1212121212</td>
+                                <td class="userTime">2020-10-10 10:10:10</td>
+                                <td class="userDep">9</td>
+                                <td class="userPos">18</td>
+                                <td><button class="btn btn-danger isAbled">禁用</button></td>
+                                <td>
+                                    <button class="btn btn-link" data-toggle="modal" data-target="#myModal1">编辑</button>
+                                    <button class="btn btn-link" data-toggle="modal" data-target="#myModal2">删除</button>
+                                    <button class="btn btn-link resPassBtn">重置密码</button>
+                                </td>
+                            </tr>-->
+                        </tbody>
+
+
+                    </table>
+                </div>
+                <div class="paging">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a class="prev" href="#">
+                                    <span>&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="active"><a class="page" href="#">1</a></li>
+                            <li><a class="page" href="#">2</a></li>
+                            <li><a class="page" href="#">3</a></li>
+                            <li><a class="page" href="#">4</a></li>
+                            <li><a class="page" href="#">5</a></li>
+                            <li>
+                                <a class="next" href="#">
+                                    <span>&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--用户添加弹出框-->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">用户添加</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <p>
+                            <label>账号：</label>
+                            <input  id="userUser" class="form-control" type="text">
+                        </p>
+                        <p>
+                            <label>姓名：</label>
+                            <input id="userName" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>性别：</label>
+                            <label for="userSexNan">男：</label><input id="userSexNan" name="userSex" value="男" class="form-control userSex"  type="radio">
+                            <label for="userSexNv">女：</label><input id="userSexNv" name="userSex" type="radio" value="女" class="form-control userSex">
+                        </p>
+                        <p>
+                            <label>年龄：</label>
+                            <input id="userAge" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>联系方式：</label>
+                            <input id="userTel" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>所属部门：</label>
+                            <select id="userDep"  class="form-control selDep">
+                            </select>
+                        </p>
+                        <p>
+                            <label>所属职位：</label>
+                            <select id="userPos" class="form-control selPos">
+
+                            </select>
+                        </p>
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary addBtn">添加</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--用户编辑弹出框-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel1">用户编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <p>
+                            <label>账号：</label>
+                            <input disabled id="userUser2" class="form-control" type="text">
+                        </p>
+                        <p>
+                            <label>姓名：</label>
+                            <input id="userName2" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>性别：</label>
+                            <label for="userSexNan">男：</label><input id="userSexNan2" name="userSex" value="男" class="form-control userSex2"  type="radio">
+                            <label for="userSexNv">女：</label><input id="userSexNv2" name="userSex" type="radio" value="女" class="form-control userSex2">
+                        </p>
+                        <p>
+                            <label>年龄：</label>
+                            <input id="userAge2" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>联系方式：</label>
+                            <input id="userTel2" class="form-control"  type="text">
+                        </p>
+                        <p>
+                            <label>所属部门：</label>
+                            <select style="width: 196px" id="userDep2"  class="form-control selDep">
+                            </select>
+                        </p>
+                        <p>
+                            <label>所属职位：</label>
+                            <select style="width: 196px" id="userPos2" class="form-control selPos">
+
+                            </select>
+                        </p>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary editBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--用户删除弹出框-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">用户删除</h4>
+                </div>
+                <div class="modal-body">
+                    您确定要删除【<span id="delName"></span>】用户吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary delBtn">确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../js/user.js"></script>

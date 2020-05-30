@@ -2,6 +2,9 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <!-- namespace代表此mapper.xml和哪一个mapper接口关联 -->
 <mapper namespace="com.gxaedu.shopping.mapper.UserMapper">
+<!--    <select id="getUsers" resultType="com.gxaedu.shopping.pojo.User">-->
+<!--        select * from `t_user`-->
+<!--    </select>-->
     <select id="getUsers" resultType="com.gxaedu.shopping.pojo.User">
         select * from `t_user`
     </select>

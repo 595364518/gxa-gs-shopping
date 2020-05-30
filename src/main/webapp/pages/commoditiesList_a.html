@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../utils/jquery-3.4.1.min.js"></script>
+    <script src="../utils/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../utils/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../stylesheet/base.css">
+    <link rel="stylesheet" href="../utils/imageUpdata/css/index.css">
+</head>
+<body>
+<div id="header">
+    <h1><img src="../images/logo.png" alt=""><span>国信安商品管理系统 </span>
+        <a class="close glyphicon glyphicon-off" aria-hidden="true"></a>
+    </h1>
+
+</div>
+<div id="app">
+    <div id="nav">
+        <div class="panel-group" id="accordion">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h4 class="panel-title">
+                        <a class="nav-header" href="home_a.html">
+                            首页
+                        </a>
+                    </h4>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" id="headingOne">
+                    <h4 class="panel-title">
+                        <a class="nav-header"  data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                            商品
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseOne" class="panel-collapse collapse in">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="commoditiesList_a.html">商品列表</a></li>
+                            <li><a href="commoditiesAdd_a.html">添加商品</a></li>
+                            <li><a href="classification1_a.html">一级分类</a></li>
+                            <li><a href="classification2_a.html">二级分类</a></li>
+                            <li><a href="brandManagement.html">品牌管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingTwo">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                            订单
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="javascript:;">订单列表</a></li>
+                            <li><a href="javascript:;">订单设置</a></li>
+                            <li><a href="javascript:;">退货申请处理</a></li>
+                            <li><a href="javascript:;">退货原因设置</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="panel panel-default">
+                <div class="panel-heading" role="tab" id="headingThree">
+                    <h4 class="panel-title">
+                        <a class="nav-header" data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                            权限
+                        </a>
+                    </h4>
+                </div>
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel">
+                    <div class="panel-body">
+                        <ul>
+                            <li><a href="user_a.html">用户管理</a></li>
+                            <li><a href="position_a.html">职位管理</a></li>
+                            <li><a href="department_a.html">部门管理</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="context" class="container-fluid">
+        <header>
+            <ol class="breadcrumb">
+                <li><a href="home_a.html">首页</a></li>
+                <li><a href="#">商品</a></li>
+                <li class="active">商品列表</li>
+            </ol>
+        </header>
+        <div id="box">
+            <div class="search-box">
+                <div class="search-box-1">
+                    <div class="h8">筛选条件</div>
+                    <div>
+                        <button class="btn btn-default resizeBtn">重置</button>
+                        <button class="btn btn-info search-btn">查询搜索</button>
+                    </div>
+                </div>
+                <div class="search-box-2">
+                    <p class="form-inline">
+                        <label for="search-comName"> 商品名称：</label>
+                        <input class="form-control" id="search-comName" type="text">
+                    </p>
+                    <p class="form-inline">
+                        <label for="search-typeOneName"> 商品名称：</label>
+                        <input class="form-control" id="search-typeOneName" type="text">
+                    </p>
+                    <p class="form-inline">
+                        <label for="search-typeTwoName"> 商品名称：</label>
+                        <input class="form-control" id="search-typeTwoName" type="text">
+                    </p>
+                    <p class="form-inline">
+                        <label for="search-price"> 商品价格：</label>
+                        <input class="form-control" id="search-price" type="text">
+                    </p>
+
+                </div>
+            </div>
+            <div class="list">
+                <table class="table table-bordered table-hover">
+                    <thead>
+                        <tr>
+                            <th>编号</th>
+                            <th>商品名称</th>
+                            <th>商品图片</th>
+                            <th>品牌名称</th>
+                            <th>一级分类</th>
+                            <th>二级分类</th>
+                            <th>商品价格</th>
+                            <th>商品描述</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="">1</td>
+                            <td class="comName">test1111111</td>
+                            <td class="img"><img src="" alt=""></td>
+                            <td class="brandName">test1111111</td>
+                            <td class="typeOneName">test1111111</td>
+                            <td class="typeTwoName">test1111111</td>
+                            <td class="price">test1111111</td>
+                            <td class="msg">test1111111</td>
+                            <td>
+                                <button class="btn btn-link" data-target="#myModal1" data-toggle="modal">编辑</button>
+                                <button class="btn btn-link" data-target="#myModal2" data-toggle="modal">删除</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="paging">
+                <nav aria-label="Page navigation">
+                    <ul class="pagination">
+                        <li>
+                            <a class="prev" href="#">
+                                <span>&laquo;</span>
+                            </a>
+                        </li>
+
+                        <li>
+                            <a class="next" href="#">
+                                <span>&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!--类型编辑-->
+    <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel1">类型编辑</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="form-inline">
+                        <p>
+                            <label>商品名称：</label>
+                            <input id="comName2" class="form-control" type="text">
+                            <label>一级分类：</label>
+                            <select id="typeOneName2" class="form-control">
+                            </select>
+                            <label>二级分类：</label>
+                            <select id="typeTwoName2" class="form-control">
+                            </select>
+                        </p>
+                        <p>
+
+                        </p>
+                        <p>
+
+                        </p>
+                        <p>
+                            <label>商品价格：</label>
+                            <input id="price" class="form-control" type="text">
+                            <label>文字描述：</label>
+                            <textarea id="msg2" class="form-control" ></textarea>
+                        </p>
+                        <p>
+
+                        </p>
+                        <div class="img-box">
+                            商品图片
+                            <section class=" img-section">
+                                <div class="z_photo upimg-div clear" >
+                                    <section class="z_file fl">
+                                        <img src="../utils/imageUpdata/img/a11.png" class="add-img">
+                                        <input type="file" name="file" id="file1" class="file" value="" accept="image/jpg,image/jpeg,image/png,image/bmp" multiple />
+                                    </section>
+                                </div>
+                            </section>
+                        </div>
+                        <aside class="mask works-mask">
+                            <div class="mask-content">
+                                <p class="del-p">您确定要删除作品图片吗？</p>
+                                <p class="check-p"><span class="del-com wsdel-ok">确定</span><span class="wsdel-no">取消</span></p>
+                            </div>
+                        </aside>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary editBtn">保存</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--类型删除-->
+    <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="">类型删除</h4>
+                </div>
+                <div class="modal-body">
+                    您确定要删除【<span id="brandName3">xxx</span>】类型吗？
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                    <button type="button" class="btn btn-primary delBtn">删除</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+<script src="../utils/imageUpdata/js/imgPlugin.js"></script>
+<script src="../utils/imageUpdata/js/imgUp.js"></script>
+<script>
+    $('#file1').change(function () {
+        console.log($(this).val());
+    })
+</script>

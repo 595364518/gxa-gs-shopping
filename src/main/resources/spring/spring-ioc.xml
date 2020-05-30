@@ -19,7 +19,7 @@
         <!-- 数据库的驱动 -->
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
         <!-- 数据库连接地址，修改为自己数据库的名字 -->
-        <property name="url" value="jdbc:mysql://localhost:3306/gxa_gs_shopping"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/gxa_gs_shopping?useUnicode=true&amp;characterEncoding=utf-8"/>
         <!-- 数据库的用户名 -->
         <property name="username" value="root"/>
         <!-- 数据库的密码 -->
@@ -41,16 +41,17 @@
     <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
         <property name="basePackage" value="com.gxaedu.shopping.mapper"/>
     </bean>
-
+<!--    <context:component-scan base-package="com.gxaedu.shopping.mapper"/>-->
     <!--4. 扫描service注解 -->
     <context:component-scan base-package="com.gxaedu.shopping.service"/>
 
-    <!--5. 配置事务管理器  -->
+<!--    5. 配置事务管理器  -->
     <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
         <property name="dataSource" ref="dataSource"/>
     </bean>
 
     <!--6. 开启注解进行事务管理   transaction-manager：引用上面定义的事务管理器-->
-    <tx:annotation-driven transaction-manager="transactionManager"/>
+    <tx:annotation-driven transaction-manager="transactionManager" proxy-target-class="true"/>
+<!--    <tx:annotation-driven proxy-target-class="true"/>-->
 
 </beans>
